@@ -53,6 +53,12 @@
   display: none;
 }
 
+@media(min-width: 1260px) {
+  .programme-container::-webkit-scrollbar {
+    display: block;
+  }
+}
+
 .programme-main {
   display: flex;
   margin-right: 1px;
