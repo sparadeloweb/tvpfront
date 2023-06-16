@@ -6,6 +6,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai"
 import { useSelector, useDispatch } from "react-redux"
 import { addToIdsList, removeFromIdsList, fillList, resetChannelsIds, fillChannelList, filterByHour } from "../../slices/programmesSlice"
 import programmesApi from "../../api/programmesApi"
+import LoadingProgrammes from './LoadingProgrammes';
 import {BiReset} from "react-icons/bi"
 
 export default function TvGrid () {
@@ -86,24 +87,28 @@ export default function TvGrid () {
     
     const customStyles = {
         content: {
-            width: '100%',
-            height: '100%',
+            width: '60%',
+            height: 'fit-content',
             top: '50%',
             left: '50%',
             right: 'auto',
             position: 'relative',
             bottom: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            flexWrap: 'nowrap',
+            padding: '50px',
             marginRight: '-50%',
-            zIndex: '5',
+            zIndex: '3',
             transform: 'translate(-50%, -50%)',
         },
     };
       
 
     return (
-        <section className="content">
+        <section className="content" style={{overflowX: 'hidden'}}>
             <div className="content__head container">
-                <div className="container">
+                <div className="container filters-container">
                     <div className="row">
                         <div className="col-12">
                             <h2 className="content__title">Consultez rapidement le Programme TV</h2>
@@ -116,7 +121,7 @@ export default function TvGrid () {
                                     style={customStyles}
                                     contentLabel="Menu d'options"
                                 >   
-                                    <h3>Menu d'options</h3>
+                                    <h3>Menu d&apos;options</h3>
                                     <button id="close-modal" onClick={closeModal}><AiOutlineCloseCircle/></button>
                                     <Tabs defaultIndex={defaultIndexOptions}>
                                         <TabList>
@@ -133,9 +138,9 @@ export default function TvGrid () {
                                         <TabPanel>
                                             <button className='reset-channels' onClick={() => dispatch(resetChannelsIds())}><BiReset/> Réinitialiser la liste des chaînes</button>
                                             <div className='channels-tab'>
-                                                {channels.length ? channels.map(channel => {
+                                                {channels.length ? channels.map((channel, index) => {
                                                     return (
-                                                    <div>
+                                                    <div key={index}>
                                                         <button onClick={() => addOrRemoveToChannelsArray(channel.cid)} className={`channel ${channels_ids.includes(channel.cid) ? 'channel-active' : null}`} disabled={adding ? 'disabled' : null}>{channel.name.replace("%REPLACEFORCOLON%", "'")}</button>
                                                     </div>
                                                     )
@@ -151,7 +156,7 @@ export default function TvGrid () {
                 </div>      
             </div>
             {
-                programmes.length > 0 ? <Grid/> : <h2>Chargement de la liste des programmes...</h2>
+                programmes.length > 0 ? <Grid/> : <LoadingProgrammes/>
             }
             
         </section>

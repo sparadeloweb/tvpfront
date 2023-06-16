@@ -1,8 +1,8 @@
-import axios from 'axios'
+import axios from 'axios';
 
 class programmesApi {
     static getHomeProgrammes() {
-        return fetch('http://localhost:5000/home').then(response => {
+        return fetch(`${process.env.NEXT_PUBLIC_PROGRAMMES_URL}/home`).then(response => {
             return response.json();
         }).catch(error => {
             return error;
@@ -10,7 +10,7 @@ class programmesApi {
     }
 
     static getAllChannels () {
-        return fetch('http://localhost:5000/channels').then(response => {
+        return fetch(`${process.env.NEXT_PUBLIC_PROGRAMMES_URL}/channels`).then(response => {
             return response.json();
         }).catch(error => {
             return error;
@@ -18,8 +18,7 @@ class programmesApi {
     }
 
     static renewProgrammesList(channels_ids) {
-
-        const data = JSON.stringify({channels_ids: channels_ids})
+        const data = JSON.stringify({channels_ids: channels_ids});
         
         const config = {
             headers: {
@@ -27,14 +26,12 @@ class programmesApi {
             }
         }
 
-        return axios.post('http://localhost:5000/renew', data, config).then(response => {
+        return axios.post(`${process.env.NEXT_PUBLIC_PROGRAMMES_URL}/renew`, data, config).then(response => {
             return response;
         }).catch(error => {
-            return error
-        })
+            return error;
+        });
     }
-
-
 }
 
-export default programmesApi
+export default programmesApi;

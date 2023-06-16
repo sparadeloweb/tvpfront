@@ -7,6 +7,7 @@ import '../styles/tvprogramme.css'
 
 // Componentes
 import Header from '../components/Header/Main'
+import Footer from '../components/Footer/Main';
 
 // Redux
 import { Provider } from 'react-redux'
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <Header/>
       <Component {...pageProps} />
+      <Footer/>
     </Provider>
   )
 }
