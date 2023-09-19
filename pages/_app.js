@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../node_modules/boxicons/css/boxicons.min.css'
 import '../styles/globals.css'
 import '../styles/header.css'
+import './programme/styles.css';
 import '../styles/tvprogramme.css'
 
 // Componentes
@@ -14,9 +15,6 @@ import { Provider } from 'react-redux'
 import { store } from '../slices/index'
 
 import { useEffect } from 'react';
-
-// Estilos Programme Individual
-import './programme/styles.css';
 
 // Google Analytics
 import { GoogleAnalytics } from "nextjs-google-analytics";

@@ -37,7 +37,7 @@ body {
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: #333C4A;
+  background-color: #333C4A !important;
   padding-top: 120px;
   -webkit-font-smoothing: antialiased;
 }
