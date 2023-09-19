@@ -15,6 +15,14 @@ import { store } from '../slices/index'
 
 import { useEffect } from 'react';
 
+// Estilos Programme Individual
+import './programme/styles.css';
+
+// Google Analytics
+import { GoogleAnalytics } from "nextjs-google-analytics";
+
+import Head from 'next/head';
+
 
 function MyApp({ Component, pageProps }) {
 
@@ -24,6 +32,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
+      <Head>
+        <link rel="icon" href="/img/favicon.png" />
+      </Head>
+      <GoogleAnalytics trackPageViews />
       <Header/>
       <Component {...pageProps} />
       <Footer/>
