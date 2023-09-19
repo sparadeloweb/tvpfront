@@ -628,7 +628,7 @@ button.filterButton.timeButton.active {
 
 
 .header__search-input.active {
-  width: 200px;
+  width: 100%;
   opacity: 1;
 }
 
