@@ -90,6 +90,7 @@ export default function Header() {
                                       À propos de nous 
                                   </a>
                               </li>
+                              <NavItem text="Articles" to="/articles"/>
                               <NavItem text="Contact" to="/contact"/>
                           </ul>
 
