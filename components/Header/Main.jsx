@@ -83,16 +83,6 @@ export default function Header() {
                                   </a>
                               </Link>
                           </div>
-                          <ul className='header__nav' ref={refNav}>
-                              <NavItem text="TV Programme" to="/"/>
-                              <li className='header__nav-item'>
-                                  <a className='header__nav-link' target="_blank" href="https://iidi.fr/" rel="noreferrer" >
-                                      À propos de nous 
-                                  </a>
-                              </li>
-                              <NavItem text="Articles" to="/articles"/>
-                              <NavItem text="Contact" to="/contact"/>
-                          </ul>
 
                           <div className={`header__search-container ${searchOpen ? 'active' : ''}`}>
                               <input 
@@ -107,6 +97,18 @@ export default function Header() {
                                   <FaSearch size={24} />
                               </button>
                           </div>
+
+
+                          <ul className='header__nav' ref={refNav}>
+                              <NavItem text="TV Programme" to="/"/>
+                              <li className='header__nav-item'>
+                                  <a className='header__nav-link' target="_blank" href="https://iidi.fr/" rel="noreferrer" >
+                                      À propos de nous 
+                                  </a>
+                              </li>
+                              <NavItem text="Articles" to="/articles"/>
+                              <NavItem text="Contact" to="/contact"/>
+                          </ul>
 
                           <button className="header__btn" type="button" ref={refButton} onClick={() => onClickButton()}>
                               <span></span>

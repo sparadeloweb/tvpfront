@@ -16,7 +16,15 @@ export default function Footer () {
                     </Link>
                 </div>
                 <div className="col-md-6 col-sm-12 copyright">
-                    <p>Site créé par IIDI - Agence web transversale - Création site internet - Design Graphique - Webmarketing.</p>
+                    <a className="footer_item" target="_blank" href="https://iidi.fr/" rel="noreferrer" >
+                        Site créé par IIDI - Agence web transversale - Création site internet - Design Graphique - Webmarketing
+                    </a>
+                    <Link passHref href="/articles">
+                        <a className="footer_item">Articles</a>
+                    </Link>
+                    <Link passHref href="/contact">
+                        <a className="footer_item">Contact</a>
+                    </Link>
                 </div>
             </div>
         </footer>

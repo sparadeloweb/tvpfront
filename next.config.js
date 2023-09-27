@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['tel.img.pmdstatic.net']
+    domains: ['tel.img.pmdstatic.net', 'wp.programmetvcesoir.fr']
   }
 }
 

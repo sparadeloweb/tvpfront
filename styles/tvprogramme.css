@@ -791,3 +791,242 @@ button.filterButton.timeButton.active {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.articles-container {
+  padding-bottom: 100px;
+}
+
+/* Estilos para la lista de artículos */
+.articles-grid {
+  padding-inline: 40px;
+}
+
+.articles-grid-list {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.article-row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100vw !important;
+  overflow-y: hidden;
+  overflow-x: hidden; 
+  margin: 20px 0px 0px 0px;
+}
+
+.article-row::-webkit-scrollbar {
+  display: none;
+}
+
+.article-main {
+  padding: 20px;
+  border-radius: 0px;
+  display: flex;
+  background-color: RGBA(255,255,255,0.05);
+  border-radius: 5px 5px 0px 0px;
+  align-items: center;
+  min-width: 120px;
+  width: 100%;
+}
+
+.article-main h3 {
+  max-width: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: white;
+  font-size: 1.1rem;
+  padding-inline: 10px;
+}
+
+.featured-image-container {
+  margin-bottom: 100px;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.featured-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.article-container {
+  display: flex;
+  margin-top: -200px;
+  z-index: 100;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 0px 0px 100px 0px;
+  justify-content: center;
+  color: white;
+  width: 100%;
+}
+
+.article-container::-webkit-scrollbar {
+  display: none;
+}
+
+.info-article h4 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+.article-containerr {
+  flex-direction: column;
+  height: 400px;
+}
+
+.article-containerr .info-container {
+  flex-basis: 0;
+}
+
+@media(min-width: 1260px) {
+
+  .article-containerr .info-container {
+    flex-basis: 80%;
+  }
+
+  .article-containerr {
+    display: flex;
+    height: 200px;
+    flex-basis: 100%;
+    flex-direction: row;
+  }
+
+  .featured-image-container {
+    width: 30%;
+  }
+
+  .info-article {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .info-article h4 {
+    margin-bottom: 20px;
+  }
+
+  .article-container::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+.article-container:first-child img {
+  border-radius: 0px 0px 0px 10px !important;
+}
+
+.article-detail {
+  display: flex;
+  cursor: pointer;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: relative;
+  min-width: 24%;
+  width: 25%;
+  z-index: 0;
+}
+
+.article-detail:hover::after {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.article-detail .left-div {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  color: #151314;
+  background-color: RGBA(255,255,255,0.9);
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 2.5%;
+  margin-bottom: 15px;
+  z-index: 2;
+}
+
+.article-detail .right-div .article-image {
+  object-fit: cover;
+  border-radius: 5px;
+  object-position: 55% 80%;
+  width: 100% !important;
+  position: relative;
+  height: 200px !important;
+}
+
+.article-detail span {
+  text-align: left;
+  font-size: .9rem;
+  width: 100%;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.article-detail h4 {
+  font-size: 1.2rem;
+  font-weight: 800 !important;
+  text-align: left;
+  margin-bottom: -10px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.article-detail p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 90px;
+  width: 100%;
+}
+
+.article-detail a {
+  width: 50%;
+  display: none;
+  margin-top: -40px;
+  text-align: left;
+  padding: 10px;
+  background-color: #151314;
+  border-color: #6a7688;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.article-detail a:hover {
+  background-color: #6a7688;
+}
+
+/* Estilos para la página de detalle del artículo */
+.article-detail-page {
+  padding: 20px;
+  background-color: RGBA(255,255,255,0.05);
+  border-radius: 5px;
+}
+
+.article-detail-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.article-detail-page p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.article-detail-page img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin: 20px 0;
+}

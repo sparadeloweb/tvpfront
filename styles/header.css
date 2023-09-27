@@ -35,7 +35,7 @@
   }
 
   .header__nav {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
@@ -317,6 +317,8 @@
   .header__search-container {
     position: relative;
     width: 50px;
+    transition: width 0.3s, opacity 0.3s;
+    margin-left: auto;
     display: inline-block;
   }
 
@@ -340,7 +342,7 @@
   }
   
   .header__search-input {
-    width: 100%;
+    width: 0px;
     height: 40px;
     padding: 5px 45px 5px 10px !important; /* Espacio a la izquierda para el icono de lupa */
     border: 1px solid #ccc;
@@ -349,6 +351,10 @@
     transition: width 0.3s, opacity 0.3s;
     color: #333C4A; /* Color del texto de búsqueda */
     background-color: rgba(255,255,255,0.9);
+  }
+
+  .header__search-input.active {
+    width: 100%;
   }
   
   .header__search-input::placeholder {
@@ -595,6 +601,11 @@ footer .copyright p {
 }
 
 @media (max-width: 760px) {
+
+  .header__nav {
+    display: flex;
+  }
+  
   footer {
     height: 170px;
   }
@@ -603,9 +614,23 @@ footer .copyright p {
     text-align: center;
   }
 
+  .footer_item:last-child {
+    padding-bottom: 40px;
+  }
+
+  .footer_item {
+    color: white !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   footer .footer-logo-container {
     margin: 0 auto;
     margin-top: 30px;
+  }
+
+  footer .copyright {
+    flex-direction: column;
   }
 
   .header .container-fluid {
@@ -671,4 +696,14 @@ footer .copyright p {
   .body--active .header {
     background-color: #323C4B !important;
   }
+}
+
+.footer_item {
+  transition: .1s all;
+  margin-inline: 20px;
+}
+
+.footer_item:hover {
+  color: white;
+  font-weight: 600;
 }
